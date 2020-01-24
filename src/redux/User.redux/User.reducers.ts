@@ -11,7 +11,7 @@ export const user = (state = initUser, action: UserActionTypes) => {
     case SET_USER:
       return action.payload;
     case CLEAR_USER:
-      return action.payload;
+      return { ...action.payload };
     default:
       return state;
   }
