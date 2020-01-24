@@ -1,19 +1,7 @@
 import { combineReducers } from "redux";
+import { user } from "./User.redux/User.reducers";
 
-interface IInitState {
-  isThis: string;
-}
-const initState: IInitState = { isThis: "working" };
-const testReducer = (state = initState, action: any) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
-const rootReducer = combineReducers({
-  testReducer
-});
+const rootReducer = combineReducers({ user });
 
 export default rootReducer;
 export type AppState = ReturnType<typeof rootReducer>;
