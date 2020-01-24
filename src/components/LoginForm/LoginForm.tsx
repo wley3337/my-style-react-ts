@@ -15,21 +15,27 @@ export const LoginForm: React.FC<IProps> = () => {
 
   return (
     <form onSubmit={e => e.preventDefault()} className={css.form}>
-      <label>
+      <label className={css.label}>
         Username
         <input
           type="text"
+          aria-label="username"
+          aria-required="true"
           name="Username"
+          className={css.input}
           onChange={e =>
             setLoginForm({ ...loginForm, username: e.target.value })
           }
         />
       </label>
-      <label>
+      <label className={css.label}>
         Password
         <input
           type="text"
+          aria-label="password"
+          aria-required="true"
           name="Password"
+          className={css.input}
           onChange={e =>
             setLoginForm({ ...loginForm, password: e.target.value })
           }
