@@ -4,7 +4,7 @@ import * as actions from "../../redux/actions";
 import * as css from "./LoginForm.css";
 
 interface IProps {}
-interface ILoginForm {
+export interface ILoginForm {
   username: string;
   password: string;
 }
@@ -31,7 +31,7 @@ export const LoginForm: React.FC<IProps> = () => {
       <label className={css.label}>
         Password
         <input
-          type="text"
+          type="password"
           aria-label="password"
           aria-required="true"
           name="Password"
