@@ -1,5 +1,5 @@
 import { style } from "typestyle";
-import { mediumBlue } from "../../globalStylesDef.css";
+import { midBlue } from "../../globalColorDef.css";
 
 export const form = style({
   color: "black"
@@ -10,7 +10,7 @@ export const label = style({
   display: "inline-block"
 });
 export const input = style({
-  backgroundColor: mediumBlue,
+  backgroundColor: midBlue,
   fontWeight: 500,
   fontSize: "1rem",
   color: "white"
