@@ -1,4 +1,4 @@
-import { color } from "csx";
+import { color, rgba } from "csx";
 
 //colors
 export let darkGray = color("#1B0E0E").toHexString();
@@ -20,3 +20,6 @@ export let summer = color("#0CB61D").toHexString();
 export let fall = color("#F98B09").toHexString();
 export let spring = color("#F7EE12").toHexString();
 export let winter = color("#1ED9E5").toHexString();
+
+// colors with reduced transparency
+export let lightGray60 = rgba(254, 254, 254, 0.6);

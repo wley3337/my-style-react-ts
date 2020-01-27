@@ -7,7 +7,7 @@ interface ILandingProps {}
 
 export const Landing: React.FC<ILandingProps> = () => {
   return (
-    <div className={css.body}>
+    <div>
       <Route exact path="/" render={p => <LoginForm {...p} />} />
     </div>
   );
