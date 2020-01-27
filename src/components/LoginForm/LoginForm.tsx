@@ -2,19 +2,34 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../redux/actions";
 import * as css from "./LoginForm.css";
+import { RouteComponentProps } from "react-router-dom";
+import { ISubLoginForm } from "../../redux/LoginForm.redux/LoginForm.types";
 
-interface IProps {}
+interface ILoginFormProps extends RouteComponentProps {
+  //actions
+  subLoginForm: (subLoginFormObj: ISubLoginForm) => void;
+}
+
 export interface ILoginForm {
   username: string;
   password: string;
 }
-export const LoginForm: React.FC<IProps> = () => {
+export const LoginForm: React.FC<ILoginFormProps> = ({
+  subLoginForm,
+  history
+}) => {
   const initLoginForm: ILoginForm = { username: "", password: "" };
 
   const [loginForm, setLoginForm] = useState(initLoginForm);
 
   return (
-    <form onSubmit={e => e.preventDefault()} className={css.form}>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        subLoginForm({ loginForm: loginForm, history: history });
+      }}
+      className={css.form}
+    >
       <label className={css.label}>
         Username
         <input

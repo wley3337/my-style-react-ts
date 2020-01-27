@@ -1,17 +1,23 @@
 import { style } from "typestyle";
-import { midBlue } from "../../globalColorDef.css";
+import { midBlue, darkGray, lightGray } from "../../globalColorDef.css";
 
 export const form = style({
-  color: "black"
+  color: darkGray
 });
 
 export const label = style({
   fontSize: ".75rem",
-  display: "inline-block"
+  $nest: {
+    //all children
+    "&>*": {
+      display: "block"
+    }
+  }
 });
+
 export const input = style({
   backgroundColor: midBlue,
   fontWeight: 500,
   fontSize: "1rem",
-  color: "white"
+  color: lightGray
 });
