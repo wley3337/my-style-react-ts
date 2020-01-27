@@ -32,7 +32,7 @@ function* handleSubLoginForm(action: ISubLoginFormAction) {
 
     if (resObj.success) {
       //set user
-      yield put(setUser(resObj.user.user));
+      yield put(setUser(resObj.user));
       //set JWT token to local storage
       localStorage.setItem("myStyle-Token", resObj.token);
       //push history to redirect
@@ -40,6 +40,7 @@ function* handleSubLoginForm(action: ISubLoginFormAction) {
     }
     if (!resObj.success) {
       //handle errors
+      // const error = "Wrong username or password.";
     }
   } catch (err) {
     console.error("SubLoginForm: ", err);
