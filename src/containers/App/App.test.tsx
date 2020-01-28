@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { shallow } from "enzyme";
 import App from "./App";
 
 test("renders without crashing", () => {
@@ -7,6 +7,6 @@ test("renders without crashing", () => {
   // const linkElement = getByText(/learn react/i);
   // expect(linkElement).toBeInTheDocument();
   //done to pass test current tests
-  const didRender = render(<App />);
+  const didRender = shallow(<App />);
   expect(didRender).toBeDefined;
 });

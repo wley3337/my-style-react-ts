@@ -14,7 +14,7 @@ export function* watchSubLoginForm() {
   yield takeEvery(SUB_LOGIN, handleSubLoginForm);
 }
 
-function* handleSubLoginForm(action: ISubLoginFormAction) {
+export function* handleSubLoginForm(action: ISubLoginFormAction) {
   const { loginForm, history } = action.payload;
 
   const options = {
