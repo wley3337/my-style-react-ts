@@ -37,7 +37,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
           className={css.form}
         >
           <label className={css.label}>
-            username
+            Username
             <input
               type="text"
               aria-label="username"
@@ -50,7 +50,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
             />
           </label>
           <label className={css.label}>
-            password
+            Password
             <input
               type="password"
               aria-label="password"
@@ -70,7 +70,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
             className={css.button}
           />
         </form>
-        <Link to="/create-user" className={css.link}>
+        <Link to="/create-account" className={css.link}>
           Create Account
         </Link>
       </span>
