@@ -4,8 +4,8 @@ import {
   subLoginForm,
   watchSubLoginForm,
   handleSubLoginForm
-} from "./LoginFrom.actions";
-import { ISubLoginForm, SUB_LOGIN } from "./LoginForm.types";
+} from "./SubLoginFrom.actions";
+import { ISubLoginForm, SUB_LOGIN } from "./SubLoginForm.types";
 import { createMemoryHistory } from "history";
 import { ILoginForm } from "../../components/LoginForm/LoginForm";
 import { BASE_URL, setUser } from "../actions";

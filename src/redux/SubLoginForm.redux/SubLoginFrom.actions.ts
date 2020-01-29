@@ -3,7 +3,7 @@ import {
   ISubLoginForm,
   SUB_LOGIN,
   ISubLoginFormAction
-} from "./LoginForm.types";
+} from "./SubLoginForm.types";
 import { BASE_URL, setUser } from "../actions";
 
 export const subLoginForm = (subLoginFormObj: ISubLoginForm) => {

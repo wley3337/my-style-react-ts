@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../redux/actions";
 import * as css from "./LoginForm.css";
 import { RouteComponentProps, Link } from "react-router-dom";
-import { ISubLoginForm } from "../../redux/LoginForm.redux/LoginForm.types";
+import { ISubLoginForm } from "../../redux/SubLoginForm.redux/SubLoginForm.types";
 
 interface ILoginFormProps extends RouteComponentProps {
   //actions
