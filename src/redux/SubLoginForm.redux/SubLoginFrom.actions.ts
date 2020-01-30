@@ -31,11 +31,8 @@ export function* handleSubLoginForm(action: ISubLoginFormAction) {
     const resObj = yield call([res, "json"]);
 
     if (resObj.success) {
-      //set user
       yield put(setUser(resObj.user));
-      //set JWT token to local storage
       localStorage.setItem("myStyle-Token", resObj.token);
-      //push history to redirect
       history.push("/dashboard");
     }
     if (!resObj.success) {
