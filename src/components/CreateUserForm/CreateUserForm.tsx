@@ -4,9 +4,11 @@ import * as actions from "../../redux/actions";
 import createAccount from "../../imgs/create-account-bg.png";
 import { RouteComponentProps, Link } from "react-router-dom";
 import * as css from "./CreateUserForm.css";
+import { ISubCreateUserForm } from "../../redux/SubCreateUserForm.redux/SubCreateUserForm.types";
 
 interface ICreateUserFormProps extends RouteComponentProps {
   //actions
+  subCreateUserForm: (subCreateUserForm: ISubCreateUserForm) => void;
 }
 
 export interface ICreateUserForm {
@@ -16,7 +18,10 @@ export interface ICreateUserForm {
   password: string;
 }
 
-export const CreateUserForm: React.FC<ICreateUserFormProps> = () => {
+export const CreateUserForm: React.FC<ICreateUserFormProps> = ({
+  subCreateUserForm,
+  history
+}) => {
   const initCreateUserForm: ICreateUserForm = {
     firstName: "",
     lastName: "",
@@ -38,7 +43,10 @@ export const CreateUserForm: React.FC<ICreateUserFormProps> = () => {
         <form
           onSubmit={e => {
             e.preventDefault();
-            //   subLoginForm({ loginForm: loginForm, history: history });
+            subCreateUserForm({
+              createUserForm: createUserForm,
+              history: history
+            });
           }}
           className={css.form}
         >
