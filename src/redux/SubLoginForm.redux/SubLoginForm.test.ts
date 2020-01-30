@@ -36,7 +36,7 @@ describe("SubLoginForm.redux", () => {
     });
   });
 
-  describe("handleSubLoginForm", () => {
+  describe("handleSubLoginForm flow", () => {
     const userObj = { username: "Jr", firstName: "Bob", lastName: "Patt" };
 
     const mockResObj = {
@@ -61,7 +61,7 @@ describe("SubLoginForm.redux", () => {
 
     expect(gen.next().value).toEqual(call(fetch, BASE_URL + "/login", options));
     expect(gen.next(mockResObj).value).toEqual(call([mockResObj, "json"]));
-    test("on success adds user to store, adds token to local storage, and pushes `/dashboard` to history", () => {
+    test("on success adds user to store", () => {
       const clone = gen.clone();
       expect(clone.next(mockResObj).value).toEqual(
         put(setUser(mockResObj.user))
