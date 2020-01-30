@@ -1,6 +1,6 @@
 import { all } from "redux-saga/effects";
-import { watchSubLoginForm } from "./actions";
+import { watchSubLoginForm, watchSubCreateUserForm } from "./actions";
 
 export default function* rootSaga() {
-  yield all([watchSubLoginForm()]);
+  yield all([watchSubLoginForm(), watchSubCreateUserForm()]);
 }

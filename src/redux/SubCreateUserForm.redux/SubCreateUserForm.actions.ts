@@ -5,8 +5,14 @@ import {
   ISubCreateUserFormAction
 } from "./SubCreateUserForm.types";
 
-export const submitCreateUserForm = (
+export const subCreateUserForm = (
   subCreateUserFormObj: ISubCreateUserForm
 ): ISubCreateUserFormAction => {
   return { type: SUB_CREATE_USER_FORM, payload: subCreateUserFormObj };
 };
+
+export function* watchSubCreateUserForm() {
+  yield takeEvery(SUB_CREATE_USER_FORM, handleSubCreateUserForm);
+}
+
+export function* handleSubCreateUserForm(action: ISubCreateUserFormAction) {}
