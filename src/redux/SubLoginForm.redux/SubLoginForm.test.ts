@@ -1,16 +1,16 @@
 import { cloneableGenerator } from "@redux-saga/testing-utils";
 import { call, put } from "redux-saga/effects";
+import { createMemoryHistory } from "history";
+import { BASE_URL, setUser } from "../actions";
 import {
   subLoginForm,
   watchSubLoginForm,
   handleSubLoginForm
 } from "./SubLoginFrom.actions";
 import { ISubLoginForm, SUB_LOGIN } from "./SubLoginForm.types";
-import { createMemoryHistory } from "history";
 import { ILoginForm } from "../../components/LoginForm/LoginForm";
-import { BASE_URL, setUser } from "../actions";
 
-describe("LoginForm.redux", () => {
+describe("SubLoginForm.redux", () => {
   const history = createMemoryHistory();
   const testLoginForm: ILoginForm = { username: "test123", password: "123" };
   const testSubLoginForm: ISubLoginForm = {
@@ -18,7 +18,7 @@ describe("LoginForm.redux", () => {
     history: history
   };
 
-  describe("subLoginForm action", () => {
+  describe("subLoginForm action creator", () => {
     it("returns correct action", () => {
       const res = { type: SUB_LOGIN, payload: testSubLoginForm };
       expect(subLoginForm(testSubLoginForm)).toEqual(res);
@@ -37,7 +37,7 @@ describe("LoginForm.redux", () => {
   });
 
   describe("handleSubLoginForm", () => {
-    const userObj = { username: "test123", firstName: "Bob", lastName: "Patt" };
+    const userObj = { username: "Jr", firstName: "Bob", lastName: "Patt" };
 
     const mockResObj = {
       success: true,
