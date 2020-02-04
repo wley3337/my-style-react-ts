@@ -51,7 +51,9 @@ describe("AutoLogin", () => {
     };
 
     const gen = cloneableGenerator(handleAutoLogin)(testAction);
-    expect(gen.next().value).toEqual(call(fetch, BASE_URL + "/users", options));
+    expect(gen.next().value).toEqual(
+      call(fetch, BASE_URL + "/auto_login", options)
+    );
     expect(gen.next(mockResObj).value).toEqual(call([mockResObj, "json"]));
     test("on success adds user to store", () => {
       const clone = gen.clone();

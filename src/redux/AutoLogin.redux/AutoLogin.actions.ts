@@ -24,7 +24,7 @@ export function* handleAutoLogin(action: IAutoLoginAction) {
   };
 
   try {
-    const res = yield call(fetch, BASE_URL + "/users", options);
+    const res = yield call(fetch, BASE_URL + "/auto_login", options);
     const resObj = yield call([res, "json"]);
 
     if (resObj.success) {
