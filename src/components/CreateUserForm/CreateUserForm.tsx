@@ -4,11 +4,16 @@ import * as actions from "../../redux/actions";
 import createAccount from "../../imgs/create-account-bg.png";
 import { RouteComponentProps, Link } from "react-router-dom";
 import * as css from "./CreateUserForm.css";
-import { ISubCreateUserForm } from "../../redux/SubCreateUserForm.redux/SubCreateUserForm.types";
+import {
+  ISubCreateUserForm,
+  ISubCreateUserFormAction
+} from "../../redux/SubCreateUserForm.redux/SubCreateUserForm.types";
 
 interface ICreateUserFormProps extends RouteComponentProps {
   //actions
-  subCreateUserForm: (subCreateUserForm: ISubCreateUserForm) => void;
+  subCreateUserForm: (
+    subCreateUserForm: ISubCreateUserForm
+  ) => ISubCreateUserFormAction;
 }
 
 export interface ICreateUserForm {
