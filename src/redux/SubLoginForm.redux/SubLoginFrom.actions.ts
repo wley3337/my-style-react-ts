@@ -33,7 +33,7 @@ export function* handleSubLoginForm(action: ISubLoginFormAction) {
     if (resObj.success) {
       yield put(setUser(resObj.user));
       localStorage.setItem("myStyle-Token", resObj.token);
-      history.push("/dashboard");
+      history.push("/closet");
     }
     if (!resObj.success) {
       //handle errors

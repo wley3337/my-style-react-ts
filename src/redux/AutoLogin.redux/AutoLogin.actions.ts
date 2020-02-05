@@ -29,7 +29,7 @@ export function* handleAutoLogin(action: IAutoLoginAction) {
 
     if (resObj.success) {
       yield put(setUser(resObj.user));
-      history.push("/dashboard");
+      history.push("/closet");
     }
   } catch (err) {
     console.error("AutoLogin Error: ", err);

@@ -1,12 +1,15 @@
 import React from "react";
 import { Route } from "react-router";
 import { RouteComponentProps } from "react-router-dom";
-import LoginForm from "../../components/LoginForm/LoginForm";
-import CreateUserForm from "../../components/CreateUserForm/CreateUserForm";
 import { connect } from "react-redux";
 import { AppState } from "../../redux/rootReducer";
 import { IUser } from "../../redux/User.redux/User.types";
+
+import LoginForm from "../../components/LoginForm/LoginForm";
+import CreateUserForm from "../../components/CreateUserForm/CreateUserForm";
 import AutoLogin from "../../components/AutoLogin/AutoLogin";
+import Closet from "../Closet/Closet";
+
 interface ILandingProps extends RouteComponentProps {
   //state
   user: IUser;
@@ -28,6 +31,7 @@ export const Landing: React.FC<ILandingProps> = ({ user }) => {
         path="/create-account"
         render={p => <CreateUserForm {...p} />}
       />
+      <Route exact path="/closet" component={Closet} />
     </div>
   );
 };
