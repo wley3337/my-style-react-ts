@@ -14,7 +14,7 @@ describe("User.redux", () => {
       const userAction = { type: "init", payload: mockUserPayload };
       expect(user(undefined, userAction)).toBe(initUser);
     });
-    it("returns initial state on CLEAR_USE", async () => {
+    it("returns initial state on CLEAR_USER", async () => {
       const userAction = { type: CLEAR_USER, payload: initUser };
       expect(user(mockUserPayload, userAction)).toEqual(initUser);
       expect(user(mockUserPayload, userAction)).not.toBe(initUser);
