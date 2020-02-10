@@ -3,7 +3,9 @@ import { style } from "typestyle";
 export const grid = style({
   width: "100%",
   display: "grid",
-  gridTemplateColumns: "1fr auto 1fr"
+  gridTemplateColumns: "1fr auto 1fr",
+  gridColumnGap: ".2rem",
+  alignItems: "center"
 });
 
 export const leftButton = style({

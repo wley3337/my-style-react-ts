@@ -1,8 +1,9 @@
 import { style } from "typestyle";
 
 export const grid = style({
+  height: "100vh",
   display: "grid",
-  gridTemplateRows: ".3fr auto .3fr",
+  gridTemplateRows: "auto 1fr auto",
   gridTemplateAreas: `'title' 'menu' 'footer'`
 });
 
@@ -13,15 +14,14 @@ export const titleBlock = style({
 });
 
 export const menuContainer = style({
-  gridArea: "menu"
+  gridArea: "menu",
+  overflowY: "scroll"
 });
 export const heading = style({
   textAlign: "center",
   margin: ".2rem 0rem"
 });
-export const menuOptions = style({
-  overflowY: "scroll"
-});
+export const menuOptions = style({});
 
 export const footer = style({
   gridArea: "footer"
