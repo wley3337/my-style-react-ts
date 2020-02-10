@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { RightNavButton } from "./RightNavButton";
+
 test("renders without crashing", () => {
   const callBack = jest.fn();
   const didRender = shallow(

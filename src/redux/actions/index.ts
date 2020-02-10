@@ -4,3 +4,4 @@ export * from "../User.redux/User.actions";
 export * from "../SubLoginForm.redux/SubLoginFrom.actions";
 export * from "../SubCreateUserForm.redux/SubCreateUserForm.actions";
 export * from "../AutoLogin.redux/AutoLogin.actions";
+export * from "../CasualBoolean.redux/CasualBoolean.actions";

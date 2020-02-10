@@ -23,7 +23,7 @@ export const FooterNavigation: React.FC<IFooterNavigationProps> = ({
       </div>
       <div className={css.option}>{optionReturn(location.pathname)}</div>
       <div className={css.rightButton}>
-        <RightNavButton title="Tags" callBack={() => console.log("logout")} />
+        <RightNavButton title="Tags" callBack={() => console.log("tags")} />
       </div>
     </div>
   );
