@@ -21,17 +21,24 @@ export const CasualToggle: React.FC<ICasualToggleProps> = ({
   setCasualFalse,
   casual
 }) => {
-  const handleClick = casual ? setCasualFalse : setCasualTrue;
+  const handleClick: () => void = casual ? setCasualFalse : setCasualTrue;
+  const displayText: string = casual ? "Casual" : "Dressy";
+  console.log(casual);
   return (
-    <div className={css.main} onClick={handleClick}>
-      <label className={`${css.toggleSwitch} ${css.switchLeftRight}`}>
-        <input className={css.switchInput} type="checkbox" />
+    <div className={css.main}>
+      <label className={`${css.toggleSwitch} `}>
+        <input
+          className={css.switchInput}
+          type="checkbox"
+          checked={!!casual}
+          onChange={handleClick}
+        />
         <span
-          className={css.switchLabel}
+          className={`${css.switchLabel} `}
           data-on="Casual"
           data-off="Dressy"
         ></span>
-        <span className="switch-handle"></span>
+        <span className={`${css.switchHandle} handle`} data-fill=" "></span>
       </label>
       {/* Casual: {`${casual}`} */}
     </div>

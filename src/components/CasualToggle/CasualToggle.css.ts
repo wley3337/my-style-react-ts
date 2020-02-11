@@ -1,10 +1,14 @@
 import { style } from "typestyle";
-import { darkGray } from "../../globalColorDef.css";
+import {
+  darkGray,
+  darkBlue,
+  darkRed,
+  lightRed,
+  lightGray,
+  midGray
+} from "../../globalColorDef.css";
 
-export const main = style({
-  border: `solid .1rem ${darkGray}`,
-  width: "100%"
-});
+export const main = style({});
 
 export const toggleSwitch = style({
   position: "relative",
@@ -27,17 +31,43 @@ export const switchInput = style({
   top: "0",
   left: "0",
   opacity: "0",
-  boxSizing: "content-box"
+  boxSizing: "content-box",
+  $nest: {
+    "&:checked": {
+      $nest: {
+        "&+span": {
+          background: darkBlue
+        },
+        "&+span::before": {
+          opacity: "0"
+        },
+        "&+span::after": {
+          opacity: "1"
+        },
+        // .switch-input:checked ~ .switch-handle {
+        "&~ .handle": {
+          left: "74px",
+          boxShadow: "-1px 1px 5px rgba(0, 0, 0, 0.2)"
+        }
+      }
+    }
+  }
 });
 
+//.switch-label
 export const switchLabel = style({
-  overflow: "hidden",
+  // 	transition: All 0.3s ease;
+  transition: "All 0.3s ease",
+  // 	-webkit-transition: All 0.3s ease;
+  // 	-moz-transition: All 0.3s ease;
+  // 	-o-transition: All 0.3s ease;
   position: "relative",
   display: "block",
   height: "inherit",
   fontSize: "10px",
-  textTransform: "uppercase",
-  background: "#eceeef",
+  // textTransform: "uppercase",
+
+  background: darkRed,
   borderRadius: "inherit",
   boxShadow:
     "inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15)",
@@ -50,14 +80,14 @@ export const switchLabel = style({
       lineHeight: "1",
       "-webkit-transition": "inherit",
       "-moz-transition": "inherit",
+      // -o-transition: inherit; missing
       transition: "inherit",
       boxSizing: "content-box",
       content: "attr(data-off)",
       right: "11px",
-      color: "#aaaaaa",
+      color: lightGray,
       textShadow: "0 1px rgba(255, 255, 255, 0.5)"
     },
-
     "&::after": {
       position: "absolute",
       top: "50%",
@@ -65,71 +95,51 @@ export const switchLabel = style({
       lineHeight: "1",
       "-webkit-transition": "inherit",
       "-moz-transition": "inherit",
+      // -o-transition: inherit; missing
       transition: "inherit",
       boxSizing: "content-box",
       content: "attr(data-on)",
       left: "11px",
-      color: "#FFFFFF",
+      color: lightGray,
       textShadow: "0 1px rgba(0, 0, 0, 0.2)",
       opacity: "0"
     }
   }
 });
 
-export const switchLeftRight = style({
-  overflow: "hidden",
-  width: "20px",
-  height: "20px",
+// .switch-handle {
+export const switchHandle = style({
+  // 	transition: All 0.3s ease;
+  transition: "All 0.3s ease",
+  "-webkit-transition": "All 0.3s ease",
+  "-moz-transition": "All 0.3s ease",
+  // 	-o-transition: All 0.3s ease;
+  position: "absolute",
   top: "4px",
-  left: "0",
-  right: "0",
-  bottom: "0",
-  padding: "11px 0 0 0",
-  textIndent: "-12px",
-  borderRadius: "20px",
-  boxShadow:
-    "inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1)"
+  left: "4px",
+  width: "28px",
+  height: "28px",
+  background: "linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0)",
+  backgroundImage: "-webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0)",
+  borderRadius: "100%",
+  boxShadow: "1px 1px 5px rgba(0, 0, 0, 0.2)",
+  $nest: {
+    "&::before": {
+      content: "attr(data-fill)",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      margin: "-6px 0 0 -6px",
+      width: "12px",
+      height: "12px",
+      background: `linear-gradient(to bottom, ${lightGray}, ${darkBlue})`,
+      backgroundImage: `-webkit-linear-gradient(top, ${lightGray}, ${midGray})`,
+      borderRadius: "6px",
+      boxShadow: "inset 0 1px rgba(0, 0, 0, .2)"
+    }
+  }
 });
 
-// export const switchLabel = style({
-//   overflow: "hidden"
-// });
-
-// <style>
-
-// .switch-input:checked ~ .switch-label:before {
-// 	opacity: 0;
-// }
-// .switch-input:checked ~ .switch-label:after {
-// 	opacity: 1;
-// }
-// .switch-handle {
-// 	position: absolute;
-// 	top: 4px;
-// 	left: 4px;
-// 	width: 28px;
-// 	height: 28px;
-// 	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
-// 	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
-// 	border-radius: 100%;
-// 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-// }
-// .switch-handle:before {
-// 	content: "";
-// 	position: absolute;
-// 	top: 50%;
-// 	left: 50%;
-// 	margin: -6px 0 0 -6px;
-// 	width: 12px;
-// 	height: 12px;
-// 	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
-// 	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
-// 	border-radius: 6px;
-// 	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
-// }
-// .switch-input:checked ~ .switch-handle {
-// 	left: 74px;
-// 	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 // }
 
 // /* Transition
