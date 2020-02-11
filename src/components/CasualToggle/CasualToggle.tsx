@@ -21,7 +21,21 @@ export const CasualToggle: React.FC<ICasualToggleProps> = ({
   setCasualFalse,
   casual
 }) => {
-  return <div className={css.main}>CasualToggle</div>;
+  const handleClick = casual ? setCasualFalse : setCasualTrue;
+  return (
+    <div className={css.main} onClick={handleClick}>
+      <label className={`${css.toggleSwitch} ${css.switchLeftRight}`}>
+        <input className={css.switchInput} type="checkbox" />
+        <span
+          className={css.switchLabel}
+          data-on="Casual"
+          data-off="Dressy"
+        ></span>
+        <span className="switch-handle"></span>
+      </label>
+      {/* Casual: {`${casual}`} */}
+    </div>
+  );
 };
 
 const mSTP = (state: AppState) => {
@@ -29,3 +43,11 @@ const mSTP = (state: AppState) => {
 };
 
 export default connect(mSTP, actions)(CasualToggle);
+
+{
+  /* <label class="switch switch-left-right">
+	<input class="switch-input" type="checkbox" />
+	<span class="switch-label" data-on="On" data-off="Off"></span> 
+	<span class="switch-handle"></span> 
+</label> */
+}

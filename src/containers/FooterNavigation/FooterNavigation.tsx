@@ -3,13 +3,16 @@ import * as css from "./FooterNavigation.css";
 import { RouteComponentProps } from "react-router-dom";
 import LeftNavButton from "../../components/LeftNavButton/LeftNavButton";
 import RightNavButton from "../../components/RightNavButton/RightNavButton";
+import CasualToggle from "../../components/CasualToggle/CasualToggle";
 
 export interface IFooterNavigationProps extends RouteComponentProps {}
 
-const optionReturn = (location: string): React.FC | string => {
+const optionReturn = (pathName: string) => {
   switch (true) {
+    case pathName === "/closet":
+      return <CasualToggle />;
     default:
-      return `options are: ${location}`;
+      return `options are: ${pathName}`;
   }
 };
 
