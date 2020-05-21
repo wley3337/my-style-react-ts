@@ -34,7 +34,7 @@ export function* handleSubCreateUserForm(action: ISubCreateUserFormAction) {
     if (resObj.success) {
       yield put(setUser(resObj.user));
       localStorage.setItem("myStyle-Token", resObj.token);
-      history.push("/dashboard");
+      history.push("/closet");
     }
   } catch (err) {
     console.error("SubCreateUserForm: ", err);
