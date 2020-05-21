@@ -1,5 +1,9 @@
-import React from "react";
-
+import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import * as actions from '../../redux/actions';
+import { History } from 'history';
+import { IAutoLoginAction } from '../../redux/AutoLogin.redux/AutoLogin.types';
+import { connect } from 'react-redux';
 
 interface IAutoLoginProps extends RouteComponentProps {
   //actions
@@ -8,7 +12,7 @@ interface IAutoLoginProps extends RouteComponentProps {
 
 export const AutoLogin: React.FC<IAutoLoginProps> = ({
   history,
-  autoLogin
+  autoLogin,
 }) => {
   autoLogin(history);
   return <div>Logging in</div>;

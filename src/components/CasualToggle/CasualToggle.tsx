@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import * as actions from "../../redux/actions";
-import { AppState } from "../../redux/rootReducer";
-import * as css from "./CasualToggle.css";
+import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/actions';
+import { AppState } from '../../redux/rootReducer';
+import * as css from './CasualToggle.css';
 import {
   ICasualBooleanTrueAction,
-  ICasualBooleanFalseAction
-} from "../../redux/CasualBoolean.redux/CausalBoolean.types";
+  ICasualBooleanFalseAction,
+} from '../../redux/CasualBoolean.redux/CausalBoolean.types';
 
 interface ICasualToggleProps {
   //actions
@@ -19,11 +19,9 @@ interface ICasualToggleProps {
 export const CasualToggle: React.FC<ICasualToggleProps> = ({
   setCasualTrue,
   setCasualFalse,
-  casual
+  casual,
 }) => {
   const handleClick: () => void = casual ? setCasualFalse : setCasualTrue;
-  const displayText: string = casual ? "Casual" : "Dressy";
-  console.log(casual);
   return (
     <div className={css.main}>
       <label className={`${css.toggleSwitch} `}>
@@ -40,7 +38,6 @@ export const CasualToggle: React.FC<ICasualToggleProps> = ({
         ></span>
         <span className={`${css.switchHandle} handle`} data-fill=" "></span>
       </label>
-      {/* Casual: {`${casual}`} */}
     </div>
   );
 };
@@ -50,11 +47,3 @@ const mSTP = (state: AppState) => {
 };
 
 export default connect(mSTP, actions)(CasualToggle);
-
-{
-  /* <label class="switch switch-left-right">
-	<input class="switch-input" type="checkbox" />
-	<span class="switch-label" data-on="On" data-off="Off"></span> 
-	<span class="switch-handle"></span> 
-</label> */
-}
