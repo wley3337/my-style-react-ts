@@ -1,9 +1,5 @@
 import React from "react";
-import { RouteComponentProps } from "react-router-dom";
-import { connect } from "react-redux";
-import * as actions from "../../redux/actions";
-import { History } from "history";
-import { IAutoLoginAction } from "../../redux/AutoLogin.redux/AutoLogin.types";
+
 
 interface IAutoLoginProps extends RouteComponentProps {
   //actions
