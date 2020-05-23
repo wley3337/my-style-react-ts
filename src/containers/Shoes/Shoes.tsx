@@ -1,24 +1,24 @@
 import React from 'react'
 import * as actions from '../../redux/actions'
 import { connect } from 'react-redux'
-import * as css from './Accessories.css'
+import * as css from './Shoes.css'
 import { RouteComponentProps, Route } from 'react-router-dom'
 import MenuButton from '../../components/MenuButton/MenuButton'
-import accessories from '../../imgs/accessories.png'
+import shoesImg from '../../imgs/shoes.png'
 import SubMenu from '../SubMenu/SubMenu'
 
-interface IAccessoriesProps extends RouteComponentProps {}
+interface IShoesProps extends RouteComponentProps {}
 
-export const Accessories: React.FC<IAccessoriesProps> = () => {
-  const menuOptions = ['earrings', 'necklaces', 'bracelets', 'rings', 'belts']
-  const subUrl = '/closet/accessories'
+export const Shoes: React.FC<IShoesProps> = () => {
+  const menuOptions = ['boots', 'heels', 'flats']
+  const subUrl = '/closet/shoes'
   return (
     <div className={css.grid}>
       <div className={css.titleBlock}>
         <MenuButton
-          title={'Add Accessory'}
-          imgSrc={accessories}
-          alt="Cape and Mask Accessory Icon Image"
+          title={'Add Shoes'}
+          imgSrc={shoesImg}
+          alt="Red Tall Boot Shoes Icon Image"
         />
       </div>
       <div className={css.menuContainer}>
@@ -34,4 +34,4 @@ export const Accessories: React.FC<IAccessoriesProps> = () => {
   )
 }
 
-export default connect(null, actions)(Accessories)
+export default connect(null, actions)(Shoes)

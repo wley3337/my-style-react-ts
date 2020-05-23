@@ -12,7 +12,11 @@ const optionReturn = (pathName: string) => {
     case '/closet':
       return <CasualToggle />
     default:
-      return <Link to={`/closet`}>Closet</Link>
+      return (
+        <Link to={`/closet`} className={css.closetLink}>
+          Closet
+        </Link>
+      )
   }
 }
 

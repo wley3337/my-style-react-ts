@@ -33,9 +33,24 @@ export const ClosetNavigation: React.FC<IClosetNavigationProps> = ({
             alt="accessories icon"
             callBack={() => history.push('/closet/accessories')}
           />
-          <MenuButton title="Tops" imgSrc={tops} alt="top icon" />
-          <MenuButton title="Bottoms" imgSrc={bottoms} alt="bottom icon" />
-          <MenuButton title="Shoes" imgSrc={shoes} alt="shoes icon" />
+          <MenuButton
+            title="Tops"
+            imgSrc={tops}
+            alt="top icon"
+            callBack={() => history.push('/closet/tops')}
+          />
+          <MenuButton
+            title="Bottoms"
+            imgSrc={bottoms}
+            alt="bottom icon"
+            callBack={() => history.push('/closet/bottoms')}
+          />
+          <MenuButton
+            title="Shoes"
+            imgSrc={shoes}
+            alt="shoes icon"
+            callBack={() => history.push('/closet/shoes')}
+          />
         </div>
       </div>
     </div>

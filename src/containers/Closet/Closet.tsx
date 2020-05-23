@@ -6,15 +6,21 @@ import { Route, RouteComponentProps } from 'react-router-dom'
 import FooterNavigation from '../FooterNavigation/FooterNavigation'
 import ClosetNavigation from '../ClosetNavigation/ClosetNavigation'
 import Accessories from '../Accessories/Accessories'
+import Bottoms from '../Bottoms/Bottoms'
+import Tops from '../Tops/Tops'
+import Shoes from '../Shoes/Shoes'
 
 interface IClosetProps extends RouteComponentProps {}
 
-export const Closet: React.FC<IClosetProps> = ({ history }) => {
+export const Closet: React.FC<IClosetProps> = () => {
   return (
     <div className={css.grid}>
       <div className={css.menuContainer}>
         <Route exact path="/closet" component={ClosetNavigation} />
-        <Route exact path="/closet/accessories" component={Accessories} />
+        <Route path="/closet/accessories" component={Accessories} />
+        <Route path="/closet/tops" component={Tops} />
+        <Route path="/closet/bottoms" component={Bottoms} />
+        <Route path="/closet/shoes" component={Shoes} />
       </div>
       <div className={css.footer}>
         <Route path="/" component={FooterNavigation} />
